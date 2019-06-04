@@ -27,7 +27,9 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to the Mongo DB   UNIT18POPLUATOR IS THE NAME OF THE DABATABASE
-mongoose.connect("mongodb://localhost:27017/MongooseHomework", { useNewUrlParser: true });   
+mongoose.connect(  process.env.MONGODB_URI ||"mongodb://localhost:27017/MongooseHomework", { useNewUrlParser: true });   
+                
+//mongoose.connect("mongodb://localhost:27017/MongooseHomework", { useNewUrlParser: true });   
                     
 // Routes
 
